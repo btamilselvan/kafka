@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: kafka-boot-service
+kafka:
+  # Not all brokers needed: It is not necessary to list every single broker in the cluster; a few reliable addresses are sufficient for bootstrapping. 
+  # The client will obtain the full cluster metadata after establishing an initial connection to one of the listed servers.
+  bootstrap-server: localhost:29092,localhost:39092,localhost:49092
+  topic-name: my-test-topic
+  secondary-topic-name: my-secondary-topic
+  stock-service-topic-name: my-stock-service-topic
+  payment-service-topic-name: my-payment-service-topic
+  order-service-topic-name: my-order-service-topic
+  consumer:
+    group-id: my-test-group
+    auto-offset-reset: earliest
+    secondary-group-id: my-secondary-group
+    stock-service-group-id: my-stock-service-group
+    payment-service-group-id: my-payment-service-group
+    order-service-group-id: my-order-service-group
+    # key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    # value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+  # producer:
+      # topic: my-test-topic
+    # key-serializer: org.apache.kafka.common.serialization.StringSerializer
+    # value-serializer: org.apache.kafka.common.serialization.StringSerializer

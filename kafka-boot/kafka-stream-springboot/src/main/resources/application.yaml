@@ -1,0 +1,8 @@
+server:
+  port: 8082
+kafka:
+  bootstrap-server: localhost:29092,localhost:39092,localhost:49092
+  application-id: kafka-streams-app
+  payment-service-topic-name: my-payment-service-topic
+  stock-service-topic-name: my-stock-service-topic
+  order-service-topic-name: my-order-service-topic
